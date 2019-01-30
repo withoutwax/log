@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style/utils.css">
+    <title>Log 🌳</title>
+</head>
+
+<body class="container">
+    <nav class="nav-container">
+        <div id="logo"><a href="#"><span>Log 🌳</span></a></div>
+        <ul class="nav-links">
+            <li class="logged-in hover-transition-01"><a href="#" class="modal-trigger" data-target="modal-account">Account</a></li>
+            <li class="logged-in"><a href="#" class="modal-trigger" id="logout">Logout</a></li>
+            <li class="logged-in"><a href="#" class="modal-trigger" data-target="modal-create">Add+</a></li>
+            <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-login">Login</a></li>
+            <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-signup">Sign up</a></li>
+        </ul>
+    </nav>
+
+    <!-- ACCOUNT (PROFILE) MODAL -->
+    <div class="modal" id="modal-account">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h4>Account Details</h4>
+            <div class="account-details"></div>
+        </div>
+    </div>
+
+    <!-- SIGN UP MODAL -->
+    <div class="modal" id="modal-signup">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h4>Sign Up</h4>
+            <form id="signup-form">
+                <div class="input-field">
+                    <input type="email" id="signup-email" required />
+                    <label for="signup-email">Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="signup-password" required />
+                    <label for="signup-password">Choose password</label>
+                </div>
+                <button class="btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal" id="modal-login">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h4>Login</h4>
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required />
+                    <label for="login-email">Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required />
+                    <label for="login-password">Choose password</label>
+                </div>
+                <button class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CREATE MODAL -->
+    <div class="modal" id="modal-create">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h4>Add Inspiration</h4>
+            <form id="create-form">
+                <div class="input-field">
+                    <input type="text" id="title" required />
+                    <label for="title">Inspiration Title</label>
+                </div>
+                <div class="input-field">
+                    <textarea type="insp01" id="insp01" required></textarea>
+                    <label for="insp01">Inspiration 01</label>
+                </div>
+                <div class="input-field">
+                    <textarea type="insp02" id="insp02" required></textarea>
+                    <label for="insp02">Inspiration 02</label>
+                </div>
+                <div class="input-field">
+                    <textarea type="insp03" id="insp03" required></textarea>
+                    <label for="insp03">Inspiration 03</label>
+                </div>
+                <button class="btn">Add</button>
+            </form>
+        </div>
+
+    </div>
+
+
+    <main class="main-container inspirations">
+
+    </main>
+
+    <footer>
+        <div id="footer-copyright">Copyright &copy; 2019 Chris & Will</div>
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCHqrs6fh8-nSe4YdYMl-U1KTUWeAJUsnE",
+            authDomain: "project-log-d2dc8.firebaseapp.com",
+            databaseURL: "https://project-log-d2dc8.firebaseio.com",
+            projectId: "project-log-d2dc8",
+            storageBucket: "project-log-d2dc8.appspot.com",
+            messagingSenderId: "250818128237"
+        };
+        firebase.initializeApp(config);
+
+        // Make Auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // Update firestore settings
+        // db.settings({ timestampsInSnapshots: true });
+    </script>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="scripts/utils.js"></script>
+    <script src="index.js"></script>
+    <script src="scripts/firebase/auth.js"></script>
+
+</body>
+
+</html>

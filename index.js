@@ -1,7 +1,7 @@
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const accountDetails = document.querySelector('.account-details');
-const inspirationList = document.querySelector('.inspirations');
+const logList = document.querySelector('.logs');
 
 // NAVBAR SETUP
 const setupUI = (user) => {
@@ -30,21 +30,23 @@ const setupGuide = (data) => {
         let currentUser = firebase.auth().currentUser;
 
         data.forEach(doc => {
-            const insp = doc.data();
-
-            if (currentUser.uid == insp.uid) {
-                const div = `
+            const log = doc.data();
+            console.log(log);
+            if (currentUser.uid == log.uid) {
+                const log_div = `
                 <div>
-                    <h3 class="collapsible-header">${insp.title}</h3>
-                    <li class="collapsible-body">${insp.inspiration01}</li>
+                    <h1>${log.date.mm} ${log.date.dd}, ${log.date.yyyy}</h1>
+                    <p>${log.category}</p>
+                    <h3 class="collapsible-header">${log.title}</h3>
+                    <li class="collapsible-body">${log.description}</li>
                 </div>
                 `;
-                html += div;
+                html += log_div;
             }
         });
 
-        inspirationList.innerHTML = html;
+        logList.innerHTML = html;
     } else {
-        inspirationList.innerHTML = '<h5>Log in to view your inspiration lists</h5>';
+        logList.innerHTML = '<h5>Log in to view your log lists</h5>';
     }
 }

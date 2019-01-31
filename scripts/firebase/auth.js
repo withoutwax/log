@@ -2,10 +2,10 @@
 auth.onAuthStateChanged(user => {
 
     if (user) {
-        console.log('LOGGED IN USER:', user);
+        console.log('USER LOGGED IN:', user);
 
         // Get data from firestore
-        db.collection('categories').onSnapshot(snapshot => {
+        db.collection('log').onSnapshot(snapshot => {
             setupGuide(snapshot.docs) // sending data to setupGuides in index.js
             setupUI(user);
         });
@@ -62,19 +62,36 @@ logout.addEventListener('click', (e) => {
     });
 });
 
-// CREATE NEW INSP
+// CREATE NEW LOG
 const createForm = document.querySelector('#create-form');
+
+let today = new Date();
+let dd = today.getDate();
+let mm = new Intl.DateTimeFormat('en-US', {month: 'long'}).format(today); // If you wish to use the numberic value, use: today.getMonth() + 1; // January is 0!
+let yyyy = today.getFullYear();
+
+// console.log('today:', today, 'dd: ', dd, 'mm:', mm, 'yyyy:', yyyy);
+// console.log(new Intl.DateTimeFormat('en-US', {month: 'long'}).format(today));
+console.log(mm + ' ' + dd + ', ' + yyyy);
+
 createForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // Only show content that is related to the logged in user.
     let user = firebase.auth().currentUser;
 
-    db.collection('categories').add({
+    let categoryIndex = createForm['category'].options.selectedIndex;
+    // console.log(createForm['category'].options[categoryIndex].text);
+
+    db.collection('log').add({
         title: createForm['title'].value,
-        inspiration01: createForm['insp01'].value,
-        inspiration02: createForm['insp02'].value,
-        inspiration03: createForm['insp03'].value,
+        description: createForm['description'].value,
+        category: createForm['category'].options[categoryIndex].text,
+        date: {
+            mm: mm,
+            dd: dd,
+            yyyy: yyyy
+        },
         uid: user.uid
     }).then(() => {
         const modal = document.querySelector('#modal-create');

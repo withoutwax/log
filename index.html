@@ -77,20 +77,21 @@
             <h4>Add Inspiration</h4>
             <form id="create-form">
                 <div class="input-field">
+                    <label for="category">Select Category</label>
+                    <select id="category">
+                        <option value="">--Select a category--</option>
+                        <option value="code">Code</option>
+                        <option value="design">Design</option>
+                        <option value="read">Read</option>
+                    </select>
+                </div>
+                <div class="input-field">
                     <input type="text" id="title" required />
-                    <label for="title">Inspiration Title</label>
+                    <label for="title">Log Title</label>
                 </div>
                 <div class="input-field">
-                    <textarea type="insp01" id="insp01" required></textarea>
-                    <label for="insp01">Inspiration 01</label>
-                </div>
-                <div class="input-field">
-                    <textarea type="insp02" id="insp02" required></textarea>
-                    <label for="insp02">Inspiration 02</label>
-                </div>
-                <div class="input-field">
-                    <textarea type="insp03" id="insp03" required></textarea>
-                    <label for="insp03">Inspiration 03</label>
+                    <textarea type="description" id="description" required></textarea>
+                    <label for="description">Description</label>
                 </div>
                 <button class="btn">Add</button>
             </form>
@@ -99,7 +100,7 @@
     </div>
 
 
-    <main class="main-container inspirations">
+    <main class="main-container logs">
 
     </main>
 

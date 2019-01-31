@@ -56,18 +56,11 @@ li {
 
 .main-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
 }
 .main-container > * {
-    height: 300px;
-    width: 200px;
-    /* border: black solid 1px; */
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px #dbdbdb;
-
     margin: 30px;
-
-    text-align: center;
 }
 
 /* MODAL */

@@ -1,7 +1,7 @@
 // COLLAPSIBLE LIST
 let collapsibleHeader = document.querySelectorAll('.collapsible-header');
 
-console.log('collapsibleHeader', collapsibleHeader);
+// console.log('collapsibleHeader', collapsibleHeader);
 
 for (let i = 0; i < collapsibleHeader.length; i++) {
     collapsibleHeader[i].addEventListener('click', () => {

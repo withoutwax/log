@@ -5,7 +5,7 @@ auth.onAuthStateChanged(user => {
         console.log('USER LOGGED IN:', user);
 
         // Get data from firestore
-        db.collection('log').where("uid", "==", user.uid).onSnapshot(snapshot => {
+        db.collection('log').where("uid", "==", user.uid).orderBy("date", "desc").onSnapshot(snapshot => {
             setupGuide(snapshot.docs) // sending data to setupGuides in index.js
             setupUI(user);
         });

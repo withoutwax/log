@@ -27,20 +27,36 @@ const setupGuide = (data) => {
     if (data.length) {
 
         let html = '';
-        let currentUser = firebase.auth().currentUser;
+        let exist_date = {};
+
+        console.log(data);
 
         data.forEach(doc => {
-            const log = doc.data();
-            console.log(log);
-            const log_div = `
+            const log = doc.data(); 
+            let log_div = ``;
+            current_date = log.date.mm + log.date.dd + log.date.yyyy;
+            if (current_date in exist_date) {
+                console.log('Date already exist');
+                log_div = `
                 <div>
-                    <h1>${log.date.mm} ${log.date.dd}, ${log.date.yyyy}</h1>
+                    <p>${log.category}</p>
+                    <h3 class="collapsible-header">${log.title}</h3>
+                    <li class="collapsible-body">${log.description}</li>
+                </div>
+                `
+            } else {
+                exist_date[current_date] = true;
+                log_div = `
+                <h1>${log.date.mm} ${log.date.dd}, ${log.date.yyyy}</h1>
+                <div>
                     <p>${log.category}</p>
                     <h3 class="collapsible-header">${log.title}</h3>
                     <li class="collapsible-body">${log.description}</li>
                 </div>
                 `;
-                html += log_div;
+            }
+
+            html += log_div;
         });
 
         logList.innerHTML = html;

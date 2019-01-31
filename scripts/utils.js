@@ -23,9 +23,12 @@ let modalTriggers = document.querySelectorAll('.modal-trigger');
 
 let activeModal;
 
+console.log(modalTriggers);
+
 for (let i = 0; i < modalTriggers.length; i++) {
     modalTriggers[i].addEventListener('click', () => {
         // get data-target attribute from the nav button
+        console.log("active modal!");
         let modalTriggerType = modalTriggers[i].getAttribute('data-target');
         
         for (let j = 0; j < modals.length; j++) {

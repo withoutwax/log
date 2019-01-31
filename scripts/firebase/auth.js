@@ -72,7 +72,6 @@ let yyyy = today.getFullYear();
 
 // console.log('today:', today, 'dd: ', dd, 'mm:', mm, 'yyyy:', yyyy);
 // console.log(new Intl.DateTimeFormat('en-US', {month: 'long'}).format(today));
-console.log(mm + ' ' + dd + ', ' + yyyy);
 
 createForm.addEventListener('submit', (e) => {
     e.preventDefault();

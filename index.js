@@ -29,16 +29,13 @@ const setupGuide = (data) => {
         let html = '';
         let exist_date = {};
 
-        console.log(data);
-
         data.forEach(doc => {
             const log = doc.data(); 
             let log_div = ``;
             current_date = log.date.mm + log.date.dd + log.date.yyyy;
             if (current_date in exist_date) {
-                console.log('Date already exist');
                 log_div = `
-                <div>
+                <div class="main-log">
                     <p>${log.category}</p>
                     <h3 class="collapsible-header">${log.title}</h3>
                     <li class="collapsible-body">${log.description}</li>
@@ -47,8 +44,8 @@ const setupGuide = (data) => {
             } else {
                 exist_date[current_date] = true;
                 log_div = `
-                <h1>${log.date.mm} ${log.date.dd}, ${log.date.yyyy}</h1>
-                <div>
+                <h1 class="main-date-header">${log.date.mm} ${log.date.dd}, ${log.date.yyyy}</h1>
+                <div class="main-log">
                     <p>${log.category}</p>
                     <h3 class="collapsible-header">${log.title}</h3>
                     <li class="collapsible-body">${log.description}</li>

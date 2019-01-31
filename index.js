@@ -32,8 +32,7 @@ const setupGuide = (data) => {
         data.forEach(doc => {
             const log = doc.data();
             console.log(log);
-            if (currentUser.uid == log.uid) {
-                const log_div = `
+            const log_div = `
                 <div>
                     <h1>${log.date.mm} ${log.date.dd}, ${log.date.yyyy}</h1>
                     <p>${log.category}</p>
@@ -42,7 +41,6 @@ const setupGuide = (data) => {
                 </div>
                 `;
                 html += log_div;
-            }
         });
 
         logList.innerHTML = html;

@@ -5,7 +5,7 @@ auth.onAuthStateChanged(user => {
         console.log('USER LOGGED IN:', user);
 
         // Get data from firestore
-        db.collection('log').where("uid", "==", user.uid).orderBy("date", "desc").onSnapshot(snapshot => {
+        db.collection('log').where("uid", "==", user.uid).orderBy("createdAt", "desc").onSnapshot(snapshot => {
             setupGuide(snapshot.docs) // sending data to setupGuides in index.js
             setupUI(user);
         });
@@ -85,12 +85,14 @@ createForm.addEventListener('submit', (e) => {
     db.collection('log').add({
         title: createForm['title'].value,
         description: createForm['description'].value,
+        url: createForm['url'].value,
         category: createForm['category'].options[categoryIndex].text,
         date: {
             mm: mm,
             dd: dd,
             yyyy: yyyy
         },
+        createdAt: firebase.firestore.Timestamp.fromDate(new Date()),
         uid: user.uid
     }).then(() => {
         const modal = document.querySelector('#modal-create');

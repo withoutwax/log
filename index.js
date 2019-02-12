@@ -5,7 +5,7 @@ const logList = document.querySelector('.logs');
 
 // NAVBAR SETUP
 const setupUI = (user) => {
-    
+
     if (user) {
         const accountDetail = `<div>Logged in as ${user.email}</div>`;
         accountDetails.innerHTML = accountDetail;
@@ -30,15 +30,18 @@ const setupGuide = (data) => {
         let exist_date = {};
 
         data.forEach(doc => {
-            const log = doc.data(); 
+            const log = doc.data();
             let log_div = ``;
             current_date = log.date.mm + log.date.dd + log.date.yyyy;
             if (current_date in exist_date) {
                 log_div = `
                 <div class="main-log">
-                    <p>${log.category}</p>
-                    <h3 class="collapsible-header">${log.title}</h3>
-                    <li class="collapsible-body">${log.description}</li>
+                    <p class="log-category">${log.category}</p>
+                    <div class="log-details">
+                        <h3 class="collapsible-header">${log.title}</h3>
+                        <p class="log-url">${log.url}</p>
+                        <li class="collapsible-body">${log.description}</li>
+                    </div>
                 </div>
                 `
             } else {
@@ -46,9 +49,12 @@ const setupGuide = (data) => {
                 log_div = `
                 <h1 class="main-date-header">${log.date.mm} ${log.date.dd}, ${log.date.yyyy}</h1>
                 <div class="main-log">
-                    <p>${log.category}</p>
-                    <h3 class="collapsible-header">${log.title}</h3>
-                    <li class="collapsible-body">${log.description}</li>
+                    <p class="log-category">${log.category}</p>
+                    <div class="log-details">
+                        <h3 class="collapsible-header">${log.title}</h3>
+                        <p class="log-url">${log.url}</p>
+                        <li class="collapsible-body">${log.description}</li>
+                    </div>
                 </div>
                 `;
             }

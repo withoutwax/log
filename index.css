@@ -83,6 +83,15 @@ li {
 .main-log {
     margin-top: 15px;
     margin-left: 50px;
+
+    display: flex;
+    align-items: center;
+}
+.log-category {
+    font-size: 2em;
+}
+.log-details {
+    margin-left: 30px;
 }
 
 /* MODAL */

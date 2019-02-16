@@ -25,6 +25,22 @@
     color: inherit;
 }
 
+.button-02 {
+    /* border: var(--black) solid 2px; */
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    color: var(--black);
+    cursor: pointer;
+}
+.button-02:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+.button-02>a {
+    color: inherit;
+}
+
 /* ANIMATION */
 .hover-transition-01 {
     -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);

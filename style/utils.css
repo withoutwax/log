@@ -1,11 +1,41 @@
+/* CSS Variables */
+:root {
+    --black: #282633;
+    --light-grey: #f7f8f9;
+    --medium-grey: #B0AFB2;
+    --dark-grey: #7a7a7a;
+    --white: white;
+
+}
+
+/* COMMON UI */
+.button-01 {
+    border: var(--black) solid 2px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    color: var(--black);
+    cursor: pointer;
+}
+.button-01:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+.button-01>a {
+    color: inherit;
+}
+
+/* ANIMATION */
 .hover-transition-01 {
     -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .hover-transition-01::after {
     -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .hover-transition-01:hover {
     margin-top: 20px;
 }

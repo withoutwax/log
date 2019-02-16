@@ -1,14 +1,21 @@
 body {
     margin: auto;
     min-height: 100vh;
+    
+    font-family: 'Roboto Mono', monospace;
+}
 
-    font-family: Arial, Helvetica, sans-serif;
+h1 {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    text-transform: uppercase;
+    color: var(--medium-grey);
+}
+p {
+    font-size: 1rem;
 }
 
 a {
     text-decoration: none;
-    color: #303030;
-    /* color: black; */ /* Add later */
 }
 ul {
     list-style-type: none;
@@ -25,14 +32,18 @@ li {
     /* border: solid red 1px; */
 }
 
+/* =========================== */
 /* NAV BAR */
 .nav-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    /* width: 100vw;
+    position: fixed; */
 
-    background-color: #eaeaea;
-    box-shadow: 0px 0px 28px #bababa; 
+    background-color: white;
+}
+.nav-container ul:last-child {
+    margin-left:auto;
 }
 
 .nav-links {
@@ -48,44 +59,37 @@ li {
     background-image: url(assets/img/logo.png);
     background-size: contain;
 
-    margin-left: 5vw;
+    margin-left: 3vw;
 }
 #logo > a > span {
     display: none;
 }
-
-.main-container {
+#create-log {
+    width: 50px;
     margin-left: 5vw;
-    margin-bottom: 20vh;
 }
 
-#create-log {
-    margin-top: 10vh;
-    margin-left: 50px;
 
-    padding: 10px;
-
-    border: solid black 2px;
-    border-radius: 20px;
-    /* height: 50px; */
-    width: 50px;
-    text-align: center;
+/* =========================== */
+/* MAIN */
+.main-container {
+    margin-left: 12vw;
+    margin-bottom: 20vh;
 }
 
 .logs {
     display: flex;
     flex-direction: column;
+    max-width: 40vw;
 }
 
 .main-date-header {
     margin-top: 100px;
 }
+
 .main-log {
     margin-top: 15px;
-    margin-left: 50px;
-
     display: flex;
-    align-items: center;
 }
 .log-category {
     font-size: 2em;
@@ -93,8 +97,19 @@ li {
 .log-details {
     margin-left: 30px;
 }
+.log-details > h3 {
+    margin-top: auto;
+}
+.log-url {
+/* FIND A WAY TO CREATE A LINK */
+}
+.log-body {
+    color: var(--medium-grey);
+}
 
-/* MODAL */
+
+/* =========================== */
+/* MAIN - MODAL */
 .modal {
     display: none;
     position: fixed;
@@ -120,9 +135,7 @@ footer {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto 50px;
 
-    background-color: #eaeaea;
-
-    
+    /* background-color: var(--light-grey);     */
 }
 #footer-copyright {
     grid-column: 1 / 7;

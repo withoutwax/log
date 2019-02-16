@@ -35,27 +35,29 @@ const setupGuide = (data) => {
             current_date = log.date.mm + log.date.dd + log.date.yyyy;
             if (current_date in exist_date) {
                 log_div = `
-                <div class="main-log">
-                    <p class="log-category">${log.category}</p>
+                <div class="main-log" style="margin-top:50px;">
+                    <span class="log-category">${log.category}</span>
                     <div class="log-details">
-                        <h3 class="collapsible-header">${log.title}</h3>
+                        <h3 class="log-header">${log.title}</h3>
                         <p class="log-url">${log.url}</p>
-                        <li class="collapsible-body">${log.description}</li>
+                        <li class="log-body">${log.description}</li>
                     </div>
                 </div>
+                
                 `
             } else {
                 exist_date[current_date] = true;
                 log_div = `
                 <h1 class="main-date-header">${log.date.mm} ${log.date.dd}, ${log.date.yyyy}</h1>
                 <div class="main-log">
-                    <p class="log-category">${log.category}</p>
+                    <span class="log-category">${log.category}</span>
                     <div class="log-details">
-                        <h3 class="collapsible-header">${log.title}</h3>
+                        <h3 class="log-header">${log.title}</h3>
                         <p class="log-url">${log.url}</p>
-                        <li class="collapsible-body">${log.description}</li>
+                        <li class="log-body">${log.description}</li>
                     </div>
                 </div>
+                
                 `;
             }
 

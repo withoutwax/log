@@ -43,6 +43,24 @@
     color: inherit;
 }
 
+.button-03 {
+    /* border: var(--black) solid 2px; */
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    color: var(--light-grey-02);
+    border: var(--light-grey-02) solid 1px;
+    cursor: pointer;
+}
+.button-03:hover {
+    background-color: var(--light-grey-02);
+    color: var(--medium-grey);
+}
+.button-03>a {
+    color: inherit;
+}
+
+
 /* ANIMATION */
 .hover-transition-01 {
     -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);

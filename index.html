@@ -82,7 +82,7 @@
     <div class="modal" id="modal-create">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
-            <h2 style="text-decoration: underline">Add Inspiration</h2>
+            <h2 style="text-decoration: underline">Add Log</h2>
             <form id="create-form">
                 <div class="input-field">
                     <label for="category">Select Category</label>
@@ -125,8 +125,8 @@
                 </div>
 
                 <div class="input-field">
-                    <label for="url">Url (Optional)</label>
-                    <input type="text" id="url" placeholder="Add a link to a website" />
+                    <label for="project-url">Url (Optional)</label>
+                    <input type="text" id="project-url" placeholder="Add a link to a website" />
                 </div>
 
                 <div class="input-field">
@@ -152,8 +152,8 @@
 
     <!-- CONTENT -->
     <section class="main-container">
-        <main class="logs">
-        </main>
+        <main class="logs"></main>
+        <main class="detail"></main>
     </section>
 
 
@@ -190,6 +190,7 @@
     <script src="scripts/utils.js"></script>
     <script src="index.js"></script>
     <script src="scripts/firebase/auth.js"></script>
+    <script src="scripts/firebase/create.js"></script>
 
 </body>
 

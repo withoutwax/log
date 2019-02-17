@@ -91,7 +91,7 @@ function detailPage(e) {
         const log = doc.data();
 
         detailArea.innerHTML = `
-        <div class="edit-log button-03" id="edit-log" onclick="editLog()"><a href="#">Edit</a></div>
+        <div class="edit-log button-03" id="edit-log"><a href="#">Edit</a></div>
         <span class="log-category">${log.category}</span>
         <h1 class="log-header">${log.title}</h1>
         <div class="log-details">
@@ -99,9 +99,10 @@ function detailPage(e) {
             <li class="log-body">${log.description}</li>
         </div>
         `
+    }).then(() => { // EDITING THE LOG
+        document.querySelector('.edit-log').addEventListener('click', function () {
+            console.log('Edit!!');
+        });
     });
-}
 
-function editLog() {
-    console.log('edit log');
 }

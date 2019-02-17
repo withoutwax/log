@@ -1,0 +1,53 @@
+/* LAYOUT CSS FOR MODAL */
+
+.modal-content {
+    border-radius: 4px;
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================== */
+/* CREATE FORM */
+#create-form {
+    display: flex;
+    flex-direction: column;
+}
+.input-field {
+    display: flex;
+}
+.input-field label:first-child {
+    width: 150px;
+    text-align: right;
+    margin-right: 20px;
+}
+.input-field > * {
+    margin: 10px;
+}
+#create-form > button {
+    width: 70px;
+    padding: 5px;
+    margin-left: auto;
+}
+
+select {
+    border: var(--medium-grey) 0.1rem solid;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+input[type=text] {
+    padding:5px; 
+    border: none; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+input[type=text]:focus {
+    border-color:#333;
+}
+
+textarea {
+    border: var(--medium-grey) 0.5px solid;
+    border-radius: 4px;
+}

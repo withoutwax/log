@@ -10,8 +10,8 @@ The purpose of the app is to help me being productive by able to looking back of
   - [ ] Other
   - [ ] Read
   - [ ] Write
-- [ ] Redesign / Restructure the input page area
-- [ ] Redesign the display area for the logs
+- [x] Redesign / Restructure the input page area
+- [x] Redesign the display area for the logs
 - [ ] Support Markdown for description
 - [ ] Able to create a list of main  projects. This list of main projects then can be selected and allocated to be used to populate project-specific logs.
 

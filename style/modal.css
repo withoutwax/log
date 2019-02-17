@@ -51,3 +51,20 @@ textarea {
     border: var(--medium-grey) 0.5px solid;
     border-radius: 4px;
 }
+
+/* COMING SOON */
+/* ========================================== */
+/* PROJECT FORM */
+#create-project {
+    border: var(--light-grey-02) 0.1rem solid;
+    color: var(--light-grey-02);
+    cursor: not-allowed;
+}
+#create-project > * {
+    cursor: inherit;
+}
+#create-project:hover {
+    border: var(--light-grey-02) 0.1rem solid;
+    color: var(--light-grey-02);
+    background: inherit;
+}

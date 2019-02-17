@@ -62,16 +62,20 @@ logout.addEventListener('click', (e) => {
     });
 });
 
-// CREATE NEW LOG
-const createForm = document.querySelector('#create-form');
+// =========================================================
+// DATE CONFIGURATION
+const projectForm = document.querySelector('#project-form');
 
 let today = new Date();
 let dd = today.getDate();
 let mm = new Intl.DateTimeFormat('en-US', {month: 'long'}).format(today); // If you wish to use the numberic value, use: today.getMonth() + 1; // January is 0!
 let yyyy = today.getFullYear();
 
-// console.log('today:', today, 'dd: ', dd, 'mm:', mm, 'yyyy:', yyyy);
-// console.log(new Intl.DateTimeFormat('en-US', {month: 'long'}).format(today));
+
+
+// =========================================================
+// CREATE NEW LOG
+const createForm = document.querySelector('#create-form');
 
 createForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -101,5 +105,36 @@ createForm.addEventListener('submit', (e) => {
     }).catch(err => {
         console.log(err.message);
     });
+});
 
+// COMING SOON
+// =========================================================
+// CREATE NEW PROJECT
+projectForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Only show content that is related to the logged in user.
+    let user = firebase.auth().currentUser;
+
+    let categoryIndex = projectForm['project-category'].options.selectedIndex;
+    // console.log(projectForm['category'].options[categoryIndex].text);
+
+    db.collection('project').add({
+        name: projectForm['project-name'].value,
+        description: projectForm['project-description'].value,
+        category: projectForm['project-category'].options[categoryIndex].text,
+        date: {
+            mm: mm,
+            dd: dd,
+            yyyy: yyyy
+        },
+        createdAt: firebase.firestore.Timestamp.fromDate(new Date()),
+        uid: user.uid
+    }).then(() => {
+        const modal = document.querySelector('#modal-project');
+        modal.style.display = "none";
+        projectForm.reset();
+    }).catch(err => {
+        console.log(err.message);
+    });
 });

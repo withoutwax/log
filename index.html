@@ -17,6 +17,9 @@
     <nav class="nav-container">
         <div id="logo"><a href="#"><span>Log 🌳</span></a></div>
         <div class="logged-in button-01" id="create-log"><a href="#" class="modal-trigger" data-target="modal-create">Add</a></div>
+        <div class="logged-in button-01" id="create-project" style="margin-left: 20px; padding: 2px 15px 2px 15px;"><a
+                href="#" data-target="modal-project">Create Project</a></div><!-- <class="modal-trigger"> -->
+        
         <ul class="nav-links">
             <li class="logged-in button-02"><a href="#" class="modal-trigger" data-target="modal-account">Account</a></li>
             <li class="logged-in button-02"><a href="#" class="modal-trigger" id="logout">Logout</a></li>
@@ -99,6 +102,45 @@
                 <div class="input-field">
                     <label for="description">Description</label>
                     <textarea type="description" id="description" required placeholder="Write your log!" rows="8" cols="50"></textarea>
+                </div>
+                <button class="btn button-01">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PROJECT MODAL -->
+    <div class="modal" id="modal-project">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 style="text-decoration: underline">Add Project</h2>
+            <p style="color: var(--medium-grey)">Creating a project helps you easily organize and categories work that
+                you did each day.</p>
+            <form id="project-form">
+
+                <div class="input-field">
+                    <label for="project-name">Project Name</label>
+                    <input type="text" id="project-name" required placeholder="Project Name" />
+                </div>
+
+                <div class="input-field">
+                    <label for="url">Url (Optional)</label>
+                    <input type="text" id="url" placeholder="Add a link to a website" />
+                </div>
+
+                <div class="input-field">
+                    <label for="project-category">Select Project Category</label>
+                    <select id="project-category">
+                        <option value="">Select Project Category</option>
+                        <option value="code">💻</option>
+                        <option value="design">🎨</option>
+                        <option value="read">📚</option>
+                    </select>
+                </div>
+
+                <div class="input-field">
+                    <label for="project-description">Description</label>
+                    <textarea type="project-description" id="project-description" required placeholder="Write a simple description about your project!"
+                        rows="8" cols="50"></textarea>
                 </div>
                 <button class="btn button-01">Add</button>
             </form>

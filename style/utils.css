@@ -12,9 +12,10 @@
 .button-01 {
     border: var(--black) solid 2px;
     text-align: center;
-    padding: 5px;
+    padding: 2px;
     border-radius: 4px;
     color: var(--black);
+    background-color: var(--white);
     cursor: pointer;
 }
 .button-01:hover {

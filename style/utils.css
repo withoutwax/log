@@ -12,9 +12,10 @@
 .button-01 {
     border: var(--black) solid 2px;
     text-align: center;
-    padding: 5px;
+    padding: 2px;
     border-radius: 4px;
     color: var(--black);
+    background-color: var(--white);
     cursor: pointer;
 }
 .button-01:hover {
@@ -22,6 +23,22 @@
     color: var(--white);
 }
 .button-01>a {
+    color: inherit;
+}
+
+.button-02 {
+    /* border: var(--black) solid 2px; */
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    color: var(--black);
+    cursor: pointer;
+}
+.button-02:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+.button-02>a {
     color: inherit;
 }
 

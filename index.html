@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="style/utils.css">
     <link rel="stylesheet" href="style/font.css">
+    <link rel="stylesheet" href="style/modal.css">
     <title>LOG 🌳</title>
 </head>
 
@@ -17,11 +18,11 @@
         <div id="logo"><a href="#"><span>Log 🌳</span></a></div>
         <div class="logged-in button-01" id="create-log"><a href="#" class="modal-trigger" data-target="modal-create">Add</a></div>
         <ul class="nav-links">
-            <li class="logged-in button-01"><a href="#" class="modal-trigger" data-target="modal-account">Account</a></li>
-            <li class="logged-in button-01"><a href="#" class="modal-trigger" id="logout">Logout</a></li>
+            <li class="logged-in button-02"><a href="#" class="modal-trigger" data-target="modal-account">Account</a></li>
+            <li class="logged-in button-02"><a href="#" class="modal-trigger" id="logout">Logout</a></li>
             <!-- <li class="logged-in"><a href="#" class="modal-trigger" data-target="modal-create">Add+</a></li> -->
-            <li class="logged-out button-01"><a href="#" class="modal-trigger" data-target="modal-login">Login</a></li>
-            <li class="logged-out button-01"><a href="#" class="modal-trigger" data-target="modal-signup">Sign up</a></li>
+            <li class="logged-out button-02"><a href="#" class="modal-trigger" data-target="modal-login">Login</a></li>
+            <li class="logged-out button-02"><a href="#" class="modal-trigger" data-target="modal-signup">Sign up</a></li>
         </ul>
     </nav>
 
@@ -76,33 +77,32 @@
     <div class="modal" id="modal-create">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
-            <h4>Add Inspiration</h4>
+            <h2 style="text-decoration: underline">Add Inspiration</h2>
             <form id="create-form">
                 <div class="input-field">
                     <label for="category">Select Category</label>
                     <select id="category">
-                        <option value="">--Select a category--</option>
+                        <option value="">Select a category</option>
                         <option value="code">💻</option>
                         <option value="design">🎨</option>
                         <option value="read">📚</option>
                     </select>
                 </div>
                 <div class="input-field">
-                    <input type="text" id="title" required />
                     <label for="title">Log Title</label>
+                    <input type="text" id="title" required placeholder="Log Title" />
                 </div>
                 <div class="input-field">
-                    <input type="text" id="url" />
                     <label for="url">Url</label>
+                    <input type="text" id="url" placeholder="Add a link to a website" />
                 </div>
                 <div class="input-field">
-                    <textarea type="description" id="description" required></textarea>
                     <label for="description">Description</label>
+                    <textarea type="description" id="description" required placeholder="Write your log!" rows="8" cols="50"></textarea>
                 </div>
-                <button class="btn">Add</button>
+                <button class="btn button-01">Add</button>
             </form>
         </div>
-
     </div>
 
 

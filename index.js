@@ -77,7 +77,6 @@ function detailPage(e) {
     console.log('id', e.id);
 
     let log_data = db.collection('log').doc(e.id);
-    let html = '';
 
     // Valid options for source are 'server', 'cache', or
     // 'default'. See https://firebase.google.com/docs/reference/js/firebase.firestore.GetOptions
@@ -98,11 +97,46 @@ function detailPage(e) {
             <p class="log-url">${log.url}</p>
             <li class="log-body">${log.description}</li>
         </div>
-        `
-    }).then(() => { // EDITING THE LOG
-        document.querySelector('.edit-log').addEventListener('click', function () {
-            console.log('Edit!!');
+        `;
+        return log;
+    }).then((log) => { // EDITING THE LOG
+
+        let finishEdit = new Promise(function(resolve, reject) {
+            document.querySelector('.edit-log').addEventListener('click', function() {
+                
+                console.log('Edit!!');
+                detailArea.innerHTML = `
+                <div class="edit-log button-03" id="edit-log" style="visibility:hidden;"><a href="#">Edit</a></div>
+                <span class="log-category edit-category">${log.category}</span>
+                <h1 class="log-header edit-header" contenteditable="true">${log.title}</h1>
+                <div class="log-details edit-details">
+                    <p class="log-url edit-url" contenteditable="true">${log.url}</p>
+                    <li class="log-body edit-description" contenteditable="true">${log.description}</li>
+                </div>
+                <br />
+                <div class="save-log button-01" id="save-log"><a href="#">Save</a></div>
+                `;
+                // Implement forms & functionality here.
+                // USER 
+                resolve();
+            });
+        });
+        
+        finishEdit.then(() => {
+            document.querySelector('.save-log').addEventListener('click', function() {
+                console.log(e.id);
+                let newTitle = document.querySelector('.edit-header').innerHTML;
+                let newUrl = document.querySelector('.edit-url').innerHTML;
+                let newDescription = document.querySelector('.edit-description').innerHTML;
+
+                db.collection('log').doc(e.id).update({ 
+                    title: newTitle,
+                    description: newDescription,
+                    url: newUrl,
+                    updatedAt: firebase.firestore.Timestamp.fromDate(new Date())
+                });
+                detailPage(e);
+            });
         });
     });
-
 }

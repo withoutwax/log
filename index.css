@@ -80,12 +80,14 @@ li {
 .main-container {
     margin-left: 12vw;
     margin-bottom: 20vh;
+    display: flex;
 }
 
+/* MAIN - LOG */
 .logs {
     display: flex;
     flex-direction: column;
-    max-width: 40vw;
+    max-width: 30vw;
 }
 
 .main-date-header {
@@ -97,7 +99,7 @@ li {
     display: flex;
 }
 .log-category {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .log-details {
     margin-left: 30px;
@@ -110,6 +112,23 @@ li {
 }
 .log-body {
     color: var(--medium-grey);
+}
+
+/* MAIN - DETAIL */
+.detail {
+    max-width: 40vw;
+    margin-top: 10vh;
+    margin-left: 60px;
+}
+.detail > span.log-category {
+    font-size: 3rem;
+}
+.detail > h1 {
+    font-size: 3rem;
+    color: var(--black);
+}
+.detail > .log-details {
+    margin-left: 0px;
 }
 
 
@@ -133,6 +152,14 @@ li {
 .modal-close {
     cursor: pointer;
 }
+
+/* MAIN - DETAIL */
+#edit-log {
+    width: 50px;
+    margin-bottom: 50px;
+    
+}
+
 
 /* FOOTER */
 footer {

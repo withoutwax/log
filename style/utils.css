@@ -2,6 +2,7 @@
 :root {
     --black: #282633;
     --light-grey: #f7f8f9;
+    --light-grey-02: #e5e5e5;
     --medium-grey: #B0AFB2;
     --dark-grey: #7a7a7a;
     --white: white;
@@ -41,6 +42,24 @@
 .button-02>a {
     color: inherit;
 }
+
+.button-03 {
+    /* border: var(--black) solid 2px; */
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    color: var(--light-grey-02);
+    border: var(--light-grey-02) solid 1px;
+    cursor: pointer;
+}
+.button-03:hover {
+    background-color: var(--light-grey-02);
+    color: var(--medium-grey);
+}
+.button-03>a {
+    color: inherit;
+}
+
 
 /* ANIMATION */
 .hover-transition-01 {

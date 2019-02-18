@@ -12,8 +12,12 @@ The purpose of the app is to help me being productive by able to looking back of
   - [ ] Write
 - [x] Redesign / Restructure the input page area
 - [x] Redesign the display area for the logs
+- [ ] Able to edit logs
+- [ ] Image supports
 - [ ] Support Markdown for description
-- [ ] Able to create a list of main projects. This list of main projects then can be selected and allocated to be used to populate project-specific logs.
+  - [ ] Maybe just using lists might be simple enough
+- [ ] Able to create a list of main  projects. This list of main projects then can be selected and allocated to be used to populate project-specific logs.
+
 
 ### Future
 Think product.

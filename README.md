@@ -2,7 +2,10 @@
 🌳 Keep track of what you did 📋   
 
 **Log** is a simple web application where you can make a record things that you've done for that day.   
-The purpose of the app is to help me being productive by able to looking back of know what I did each day.   
+The purpose of the app is to help me being productive by able to looking back of know what I did each day.
+
+**PS** - This is my alpha version of the application, created using purely HTML and CSS. Thanks for visiting!    
+(The beta / main version is going to be build with TypeScript & React.)
 
 ## Things to do
 - [ ] Add more categories
